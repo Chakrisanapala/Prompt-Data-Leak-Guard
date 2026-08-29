@@ -1,0 +1,130 @@
+[
+  {
+    "id": "tc_01",
+    "title": "AWS IAM Key in Python Script",
+    "category": "Cloud Secrets",
+    "prompt": "How do I upload a file to S3 using boto3? Here is my current setup: aws_access_key_id = 'AKIAIOSFODNN7EXAMPLE' and secret is 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'. Please show me the upload_file method.",
+    "expected_entities": ["AWS_ACCESS_KEY", "AWS_SECRET_KEY"],
+    "expected_min_count": 2
+  },
+  {
+    "id": "tc_02",
+    "title": "OpenAI API Key in Node.js Script",
+    "category": "Cloud Secrets",
+    "prompt": "const openai = new OpenAI({ apiKey: 'sk-proj-abc1234567890abcdef1234567890abcdef1234567890' }); How do I stream the completions output in express?",
+    "expected_entities": ["OPENAI_API_KEY"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_03",
+    "title": "GitHub Token in CI/CD Workflow",
+    "category": "Cloud Secrets",
+    "prompt": "curl -H 'Authorization: token ghp_1234567890abcdefghijklmnopqrstuvwxyz12' https://api.github.com/user/repos. Why does this return 401 Bad Credentials?",
+    "expected_entities": ["GITHUB_TOKEN"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_04",
+    "title": "PostgreSQL Database Connection URI",
+    "category": "Database Credentials",
+    "prompt": "Connect to my database using sqlalchemy: DATABASE_URL = 'postgres://prod_admin:SuperSecretP@ss99@db.internal.corp:5432/finance_db'. Write a query to fetch all balances.",
+    "expected_entities": ["DATABASE_URI"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_05",
+    "title": "HR Employee Details with SSN and Salary",
+    "category": "PII & HR Data",
+    "prompt": "Please draft a severance agreement for Johnathan Miller (SSN: 887-65-4321, Email: jmiller@workplace.com, Phone: 415-555-0182) earning $120,000/year.",
+    "expected_entities": ["US_SSN", "EMAIL_ADDRESS", "PHONE_NUMBER"],
+    "expected_min_count": 3
+  },
+  {
+    "id": "tc_06",
+    "title": "Customer Support Credit Card Leak",
+    "category": "Financial PII",
+    "prompt": "Issue a chargeback for client Emily Watson (emily.watson99@gmail.com). Card number: 4532-8921-9034-5821. She was charged twice for ticket TICKET-88910.",
+    "expected_entities": ["CREDIT_CARD", "EMAIL_ADDRESS", "TICKET_ID"],
+    "expected_min_count": 2
+  },
+  {
+    "id": "tc_07",
+    "title": "Slack Bot OAuth Token Deployment",
+    "category": "Cloud Secrets",
+    "prompt": "I am configuring a Slack app. SLACK_BOT_TOKEN = 'xoxb-mockteam99-mockuser88-abcdefghijklmnopqrstuvwx'. How do I listen for app_mention events?",
+    "expected_entities": ["SLACK_TOKEN"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_08",
+    "title": "Google Cloud API Key & Maps Integration",
+    "category": "Cloud Secrets",
+    "prompt": "Integrate Google Maps with key AIzaSyD1234567890abcdefghijklmnopqrst-A. Center the map on coordinates 37.7749, -122.4194.",
+    "expected_entities": ["GOOGLE_API_KEY"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_09",
+    "title": "Hugging Face Access Token",
+    "category": "Cloud Secrets",
+    "prompt": "from huggingface_hub import login; login('hf_1234567890abcdefghijklmnopqrstuvwxyz1234'). Download the model meta-llama/Llama-3-8B.",
+    "expected_entities": ["HUGGINGFACE_TOKEN"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_10",
+    "title": "Hardcoded Server Password in Script",
+    "category": "Credentials",
+    "prompt": "ssh_client.connect(hostname='10.0.0.15', username='root', password='ProductionRootPassword2026!') - why does this drop after 10 seconds?",
+    "expected_entities": ["PASSWORD_ASSIGNMENT", "INTERNAL_IP"],
+    "expected_min_count": 2
+  },
+  {
+    "id": "tc_11",
+    "title": "Employee ID & Corporate Email Directory",
+    "category": "Internal PII",
+    "prompt": "Create an automated reminder for staff members EMP-49281 (dave.clark@company.internal) and EMP-59201 (lisa.simpson@company.internal) to complete their annual review.",
+    "expected_entities": ["EMPLOYEE_ID", "EMAIL_ADDRESS"],
+    "expected_min_count": 2
+  },
+  {
+    "id": "tc_12",
+    "title": "Stripe Secret Key Payment Webhook",
+    "category": "Financial Secrets",
+    "prompt": "stripe.api_key = 'sk_test_mock_1234567890abcdef12345678'. How do I verify the webhook signature from the event payload?",
+    "expected_entities": ["STRIPE_KEY"],
+    "expected_min_count": 1
+  },
+  {
+    "id": "tc_13",
+    "title": "Clean Prompt: Sorting Algorithm",
+    "category": "Clean Baseline",
+    "prompt": "Explain the difference between quicksort and mergesort in terms of time complexity, memory usage, and stability with code examples in Python.",
+    "expected_entities": [],
+    "expected_min_count": 0
+  },
+  {
+    "id": "tc_14",
+    "title": "Clean Prompt: SQL Query Optimization",
+    "category": "Clean Baseline",
+    "prompt": "How can I optimize this PostgreSQL query with indexing? SELECT orders.id, customers.name FROM orders JOIN customers ON orders.customer_id = customers.id WHERE orders.created_at >= NOW() - INTERVAL '30 days';",
+    "expected_entities": [],
+    "expected_min_count": 0
+  },
+  {
+    "id": "tc_15",
+    "title": "Clean Prompt: React Component State",
+    "category": "Clean Baseline",
+    "prompt": "Write a reusable React modal dialog component with TypeScript and CSS Modules that handles keyboard Esc closure and focus trapping.",
+    "expected_entities": [],
+    "expected_min_count": 0
+  },
+  {
+    "id": "tc_16",
+    "title": "Multiple Secrets & PII Mixed Leak",
+    "category": "Multi-Entity Complex",
+    "prompt": "Debug our sync worker: user admin@corp.org (EMP-11029) reported that syncing db postgres://user:Pass12345@prod.internal.corp:5432/main with AWS key AKIAIOSFODNN7EXAMPLE and secret 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY' fails with timeout. Contact dev at 555-0199.",
+    "expected_entities": ["EMAIL_ADDRESS", "EMPLOYEE_ID", "DATABASE_URI", "AWS_ACCESS_KEY", "AWS_SECRET_KEY", "PHONE_NUMBER"],
+    "expected_min_count": 5
+  }
+]
