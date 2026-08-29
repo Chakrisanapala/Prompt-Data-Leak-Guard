@@ -104,7 +104,7 @@ class RegexDetector:
                 "entity_type": "STRIPE_KEY",
                 "category": CategoryType.SECRET,
                 "severity": SeverityLevel.CRITICAL,
-                "pattern": re.compile(r"\b((?:sk|pk|rk)_(?:live|test|mock|sample|dummy)_[0-9a-zA-Z]{16,34})\b"),
+                "pattern": re.compile(r"\b((?:sk|pk|rk)_(?:live|test|mock|sample|dummy|test_mock)_[0-9a-zA-Z]{16,34})\b"),
                 "placeholder": "<STRIPE_API_KEY>",
                 "explanation": "Exposes a Stripe payment processing key. Live keys present a catastrophic risk of unauthorized financial charges or customer record leaks.",
                 "confidence": 0.98,

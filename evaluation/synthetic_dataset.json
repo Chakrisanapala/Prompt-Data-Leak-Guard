@@ -91,7 +91,7 @@
     "id": "tc_12",
     "title": "Stripe Secret Key Payment Webhook",
     "category": "Financial Secrets",
-    "prompt": "stripe.api_key = 'sk_test_mock_1234567890abcdef12345678'. How do I verify the webhook signature from the event payload?",
+    "prompt": "stripe.api_key = 'sk_mock_1234567890abcdef12345678'. How do I verify the webhook signature from the event payload?",
     "expected_entities": ["STRIPE_KEY"],
     "expected_min_count": 1
   },
